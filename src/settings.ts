@@ -7,9 +7,9 @@ export const SETTINGS = {
     PATH: {
         VIDEOS: '/videos',
     },
-    MONGO_URL: 'mongodb+srv://alhumbatli:MkwYkNm74tq061Ew@cluster0.sguyj66.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-    SECRET_KEY: "YOURSECRETKEYGOESHERE",
-    DB_NAME: "blogsAndPosts",
+    MONGO_URL: process.env.MONGO_URL || '',
+    SECRET_KEY: process.env.SECRET_KEY || '',
+    DB_NAME: process.env.DB_NAME || '',
     BLOG_COLLECTION_NAME: 'blogCollection',
     POST_COLLECTION_NAME: 'postCollection',
     USER_COLLECTION_NAME: 'userCollection',

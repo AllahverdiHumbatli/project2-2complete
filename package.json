@@ -31,7 +31,7 @@
     "dev": "yarn nodemon --inspect dist/index.js",
     "jest": "jest -i",
     "jest:coverage": "jest -i --coverage",
-    "localhost:run": "ssh -R 80:localhost:4000 nokey@localhost.run",
-    "serveo": "ssh -R 80:localhost:4001 serveo.net"
+    "localhost:run": "ssh -R 80:localhost:5000 nokey@localhost.run",
+    "serveo": "ssh -R 80:localhost:5000 serveo.net"
   }
 }
