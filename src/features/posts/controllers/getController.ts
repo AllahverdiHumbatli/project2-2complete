@@ -2,6 +2,8 @@ import {Request, Response} from 'express'
 
 import {postsService} from "../../../domain/posts-service";
 
+import {postQueryRepository} from "../post-query-repository";
+
 const helper = (query: {[key: string]: string| undefined}) => {
     return {
         pageNumber: query.pageNumber ? +query.pageNumber : 1,
@@ -12,7 +14,7 @@ const helper = (query: {[key: string]: string| undefined}) => {
 export const getController = async (req: Request, res: Response<any /*OutputVideoType[]*/>) => {
     const sanitizedQuery = helper(req.query as {[key: string]: string| undefined})
 
-    const allPosts =  await postsService.getPosts(sanitizedQuery) //вопрос
+    const allPosts =  await postQueryRepository.getPosts(sanitizedQuery) //вопрос
     res.status(200).send(allPosts)
     return
 };

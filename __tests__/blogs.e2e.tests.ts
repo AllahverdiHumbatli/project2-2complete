@@ -1,4 +1,4 @@
-import * as request from 'supertest';
+import  request from 'supertest';
 import {app} from "../src/app";
 import {SETTINGS} from "../src/settings";
 import {client} from "../src/db/mongo-db";

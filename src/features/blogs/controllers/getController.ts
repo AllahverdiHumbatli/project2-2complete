@@ -2,6 +2,7 @@ import {Request, Response} from 'express'
 
 import {blogsRepositories} from "../blogs-db-repository";
 import {blogsService} from "../../../domain/blogs-service";
+import {blogsQueryRepositories, } from "../blogs-query-repository";
 
 export const helper = (query: {[key: string]: string| undefined}) => {
     return {
@@ -15,6 +16,6 @@ export const helper = (query: {[key: string]: string| undefined}) => {
 
 export const getBlogsController = async (req: Request, res: Response<any>)  => {
     const sanitizedQuery = helper(req.query as {[key: string]: string| undefined})
-    const allBlogs = await blogsService.getBlogs(sanitizedQuery)
+    const allBlogs = await blogsQueryRepositories.getBlogs(sanitizedQuery)
     res.status(200).send(allBlogs)
 }

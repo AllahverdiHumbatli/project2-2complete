@@ -2,6 +2,7 @@ import {body} from "express-validator"
 import {usersDbRepository} from "../features/users/users-db-repository";
 import {userCollection} from "../db/mongo-db";
 import * as bcrypt from 'bcrypt'
+import {usersQueryRepositories} from "../features/users/user-query-repository";
 
  export const usersService = {
     async createUser(login: string, email: string, password: string) {
