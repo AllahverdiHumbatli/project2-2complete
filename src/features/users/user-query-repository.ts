@@ -51,5 +51,16 @@ export const usersQueryRepositories = {
          return this.mapToOutOutPut(res)
       }
       return false
+   },
+   async getCurrentUser(userId: string) {
+      const res = await this.getUserById(userId)
+      if(res){
+         return {
+            email: res.email,
+            login: res.login,
+            userId: userId
+         }
+      }
+      return null
    }
 }

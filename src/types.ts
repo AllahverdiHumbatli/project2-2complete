@@ -23,3 +23,13 @@ export type UserDBType= {
     createdAt: string,
     passwordHash: string
 }
+
+export type FeedBackType = {
+    postID?: string,
+    content: string,
+    commentatorInfo: {
+        userId: string,
+        userLogin: string
+    },
+    createdAt: string
+}

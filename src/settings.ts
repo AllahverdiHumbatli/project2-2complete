@@ -13,4 +13,6 @@ export const SETTINGS = {
     BLOG_COLLECTION_NAME: 'blogCollection',
     POST_COLLECTION_NAME: 'postCollection',
     USER_COLLECTION_NAME: 'userCollection',
+    FEEDBACK_COLLECTION_NAME: 'feedBackCollection',
+
 }

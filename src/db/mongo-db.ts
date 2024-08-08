@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import {SETTINGS} from "../settings";
 import {MongoClient,Collection} from "mongodb";
-import {BlogDBType, PostDBType, UserDBType} from "../types";
+import {BlogDBType, FeedBackType, PostDBType, UserDBType} from "../types";
 
 dotenv.config()
 
@@ -15,6 +15,7 @@ export const db = client.db();
 export const blogCollection: Collection<BlogDBType> = db.collection<BlogDBType>(SETTINGS.BLOG_COLLECTION_NAME)
 export const postCollection: Collection<PostDBType> = db.collection<PostDBType>(SETTINGS.POST_COLLECTION_NAME)
 export const userCollection: Collection<UserDBType> = db.collection<UserDBType>(SETTINGS.USER_COLLECTION_NAME)
+export const feedBackCollection: Collection<FeedBackType> = db.collection<FeedBackType>(SETTINGS.FEEDBACK_COLLECTION_NAME)
 
 // проверка подключения к бд
 export const connectToDB = async () => {

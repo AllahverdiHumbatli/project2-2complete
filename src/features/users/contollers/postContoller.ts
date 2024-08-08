@@ -5,6 +5,7 @@ import {usersQueryRepositories} from "../user-query-repository";
 
 export const postUser = async (req: Request, res: Response) => {
     const newUserId = await usersService.createUser(req.body.login, req.body.email, req.body.password)
+    console.log("popadayu suda")
     if(Array.isArray(newUserId)){
         res.status(400).send({ errorsMessages: [ newUserId[0] ] })
         return

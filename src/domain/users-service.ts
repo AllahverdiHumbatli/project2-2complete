@@ -35,13 +35,14 @@ import {usersQueryRepositories} from "../features/users/user-query-repository";
    async checkCredentials(loginOrEmail: string, password: string) {
         const user = await usersDbRepository.findByLoginOrEmail(loginOrEmail)
         if (!user){
-            return false
+            return null
         }
         const isCorrect = await bcrypt.compare(password, user.passwordHash)
        if (isCorrect){
-           return true
+           return user
        }
-       return false
+       console.log("neverniy kod")
+       return null
 
    }
  }
